@@ -1,0 +1,175 @@
+:root{
+    $header-height: 3rem !global;
+    $nav-width: 6rem !global;
+
+    $first-color: #fd5d5d !global;
+    $black: #e63b3b !global;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    position: relative;
+    margin: $header-height;
+    padding: 0 1rem;
+    transition: .5s;
+
+    font: 400 2rem Roboto, sans-serif;
+
+
+    // .header {
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     height: $header-height;
+    //     width: 100%;
+    //     padding: 0 1rem;
+    //     transition: .5s;
+    //     background: white;
+
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
+
+
+    // }
+
+    .sidebar{
+        position: fixed;
+        top: 0;
+        left: -30%;
+        height: 100vh;
+        width: $nav-width;
+        background: white;
+        padding-top: 1rem;
+        transition: .5s;
+        box-shadow:  .2rem .2rem 1rem rgb(187, 184, 184);
+
+
+        .nav{
+            display: flex;
+            flex-direction: column;
+            // justify-content: space-between;
+
+            overflow: hidden;
+            height: 100%;
+
+            img {
+                width: 68%;
+                margin: 0 0 1rem 1rem;
+            }
+
+            .separator {
+                background:  rgb(195, 191, 223);
+        
+                margin: 0 0 1.5rem 1rem;
+                width: 70%;
+                height: .01rem;
+            }
+
+            .nav-list{
+                .toggle {
+                    color: rgb(16, 11, 56);
+                    cursor: pointer;
+                    padding: .5rem 0 .5rem 1.3rem;
+                    margin-bottom: 3rem;
+
+                    &:hover{
+                        background: rgba(157, 157, 167, 0.1);
+                    }
+                }
+                            
+                .nav-logo, .nav-link{
+                    display: grid;
+                    grid-template-columns: max-content max-content;
+                    column-gap: 2rem;                
+
+                    padding: .5rem 0 .5rem 1.3rem;
+                }
+
+                .nav-link{
+                    color: $first-color;
+                    transition: .5s;
+                    margin-bottom: 1.5rem;
+                    position: relative;
+
+                    align-items: center;
+
+                    &:hover{
+                        color: $black;
+                        background: rgba(157, 157, 167, 0.1);
+                    }
+
+                    span {
+                        color: rgb(12, 12, 56);
+                    }
+
+                }
+                .active{
+                    background: rgba(157, 157, 167, 0.1);
+                    
+
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        height: 4.18rem;
+                        width: .4rem;
+                        background: rgb(6, 4, 128);
+                        transition: .5s;
+                    }
+                }
+            }
+        }
+    }
+
+    .show {
+        left: 0;
+        
+    }
+
+    .space-toggle{
+        padding-left: calc(#{$nav-width} + 1rem);
+    }
+
+    @media screen and (min-width: 768px) {
+        .header {
+            height: calc(#{$header-height} + 1rem);
+            padding-left: calc(#{$nav-width} + 2rem);
+        }
+    
+        .sidebar {
+            left: 0;
+            padding: 1rem 0 0 0;
+        }
+    
+        .show {
+            width: calc(#{$header-height} + 23rem);
+        }
+    
+        .space-toggle {
+            padding-left: calc(#{$nav-width} + 18.8rem);
+        }
+    }
+    
+}
+
+.space-toggle{
+    padding-left: calc(#{$nav-width} + 1rem);
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        margin: calc(#{$header-height} + 1rem) 0 0 0;
+        padding: 0 1rem 0 calc(#{$nav-width} + 2rem);
+    }
+
+    .space-toggle {
+        padding-left: calc(#{$nav-width} + 18.8rem);
+    }
+
+}
+
