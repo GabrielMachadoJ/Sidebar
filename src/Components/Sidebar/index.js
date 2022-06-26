@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import logoIcon from '../../assets/logo-icon.png'
 import logo from '../../assets/logo.png'
+
 import { List, House, UserList, ShoppingCartSimple, Paperclip, FileText } from 'phosphor-react';
 import { Link } from 'react-router-dom'
 
@@ -10,20 +11,16 @@ import './styles.scss';
 export default function Sidebar() {
 
     const [show, setShow] = useState(false)
-    const [logo, setLogo] = useState(false)
 
 
     return (
         <main className={show ? 'space-toggle' : null}>
             <aside className={`sidebar ${show ? 'show' : null}`}>
                 <nav className="nav">
-                    <img src={show ? 'logo' : 'logoIcon'} alt="Logo da cubo sistemas" id='logo'/>
+                    <img src={ show ? logo : logoIcon} alt="Logo da cubo sistemas" id='logo'/>
                     <div className='separator'></div>
                     <div className="nav-list">
-                        <div className="toggle" onClick={() => {
-                            setLogo('logo')
-                            setShow(!show)
-                            }}>
+                        <div className="toggle" onClick={() => {setShow(!show)}}>
                             <List size={32} />
                         </div>
                         <Link  to="/" className="nav-link">
