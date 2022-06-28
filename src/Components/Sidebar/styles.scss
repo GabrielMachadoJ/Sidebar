@@ -46,6 +46,7 @@ main {
         padding-top: 1rem;
         transition: .5s;
         box-shadow:  .2rem .2rem 1rem rgb(187, 184, 184);
+        
 
 
         .nav{
@@ -75,6 +76,7 @@ main {
                     cursor: pointer;
                     padding: .5rem 0 .5rem 1.3rem;
                     margin-bottom: 3rem;
+                    cursor: pointer;
 
                     &:hover{
                         background: rgba(157, 157, 167, 0.1);
@@ -94,6 +96,7 @@ main {
                     transition: .5s;
                     margin-bottom: 1.5rem;
                     position: relative;
+                    cursor: pointer;
 
                     align-items: center;
 
