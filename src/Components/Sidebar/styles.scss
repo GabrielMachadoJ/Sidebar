@@ -142,7 +142,7 @@ main {
         padding-left: calc(#{$nav-width} + 1rem);
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 375px) {
         .header {
             height: calc(#{$header-height} + 1rem);
             padding-left: calc(#{$nav-width} + 2rem);
@@ -168,7 +168,7 @@ main {
     padding-left: calc(#{$nav-width} + 1rem);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 375px) {
     main {
         margin: calc(#{$header-height} + 1rem) 0 0 0;
         padding: 0 1rem 0 calc(#{$nav-width} + 2rem);
@@ -176,6 +176,10 @@ main {
 
     .space-toggle {
         padding-left: calc(#{$nav-width} + 18.8rem);
+    }
+
+    .show {
+        width: 100%;
     }
 
 }
